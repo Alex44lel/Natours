@@ -42,3 +42,11 @@ process.on('SIGTERM', () => {
     console.log('💥 Process terminated!');
   });
 });
+
+process.on('SIGTERM', () => {
+  console.log('sigterm recieve, shutting down peacefully');
+  server.close(() => {
+    //close server but handling all requests
+    console.log('SERVER CLOSED');
+  });
+});
