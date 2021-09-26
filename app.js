@@ -67,6 +67,8 @@ app.use(mongoSanitize());
 // Data sanitization against XSS
 app.use(xss());
 
+app.use(compression());
+
 // Prevent parameter pollution
 app.use(
   hpp({
