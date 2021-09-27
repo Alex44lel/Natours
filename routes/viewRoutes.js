@@ -9,7 +9,7 @@ router.get('/me', authController.protect, viewsController.getAccount);
 
 router.get(
   '/',
-  bookingController.createBookingCheckout,
+
   authController.isLoggedIn,
   viewsController.getOverview
 );
