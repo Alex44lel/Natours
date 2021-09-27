@@ -5,6 +5,7 @@ import { displayMap } from './mapbox';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
 import '@babel/polyfill';
+import { showAlert } from './alerts';
 
 console.log('hellow from parcel');
 
@@ -82,3 +83,6 @@ if (bookBtn) {
     bookTour(tourId);
   });
 }
+
+const alertMessage = document.querySelector('body').dataset.alertMessage;
+if (alert) showAlert('success', alertMessage, 20);
